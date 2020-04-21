@@ -50,6 +50,17 @@ def findAllOutDirs(path):
                             finalPathList.append(outPath)
     return finalPathList
 
+def final_list_to_txt(list_to_save):
+    fileName = 'result.txt'
+    print(initializerCommunicate)
+        try:
+            with open(fileName, 'w') as f:
+                for i in list_to_save:
+                    f.write("%s\n" % i)
+            print(finishCommunicate)
+        except:
+            print(errorCommunicate)
+
 def writeListToTxt(listOfPaths):
     
     listOfPaths = listOfPaths
@@ -146,3 +157,4 @@ def create_SNP_list(target_str):
 
 string_looking_for = input("What u pattern U try to find?")                                 
 almost_final_list = create_SNP_list(string_looking_for)
+final_list_to_txt(almost_final_list)
